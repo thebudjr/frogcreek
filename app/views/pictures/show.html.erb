@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @picture.name %>
+</p>
+
+<p>
+  <strong>Photographer:</strong>
+  <%= @picture.photographer %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @picture.description %>
+</p>
+
+<p>
+  <strong>Price1:</strong>
+  <%= @picture.price1 %>
+</p>
+
+<p>
+  <strong>Price2:</strong>
+  <%= @picture.price2 %>
+</p>
+
+<p>
+  <strong>Price3:</strong>
+  <%= @picture.price3 %>
+</p>
+
+<p>
+  <strong>Size1:</strong>
+  <%= @picture.size1 %>
+</p>
+
+<p>
+  <strong>Size2:</strong>
+  <%= @picture.size2 %>
+</p>
+
+<p>
+  <strong>Size3:</strong>
+  <%= @picture.size3 %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @picture.availability %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
