@@ -2,9 +2,7 @@ class PagesController < ApplicationController
 	before_action :authenticate_user!, only: [:dashboard]
 
   def home
-  	if current_user
-  		redirect_to pictures_path
-  	end
+  	@pictures = Picture.last(4)
   end
 
   def dashboard

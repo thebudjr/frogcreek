@@ -1,8 +1,9 @@
 <div class="col-md-3">
 	<div class="thumbnail">
 		<%= link_to picture_path(picture) do %>
-			<%= image_tag "zoe2.jpg", class: "img-responsive" %>
+			<%= image_tag picture.image.url(:original), class: "img-responsive" %>
 		<% end %>
+		
 		<div class="caption">
 			<p><strong><%= link_to picture.name, picture_path(picture) %></strong></p>
 			<p>$<%= picture.price1.to_f / 100 %> - $<%= picture.price3.to_f / 100 %></p>

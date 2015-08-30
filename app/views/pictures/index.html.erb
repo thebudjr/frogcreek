@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<div class="row">
-<%= render @pictures %>
+	<div class="row">
+	<%= render @pictures %>
+	</div>
+
+	<br>
+	<% if current_user.try(:admin?) %>
+	  <%= link_to 'New Picture', new_picture_path %>
+	<% end %>
 </div>
-
-<br>
-<% if current_user.try(:admin?) %>
-  <%= link_to 'New Picture', new_picture_path %>
-<% end %>

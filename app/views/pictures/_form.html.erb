@@ -12,6 +12,9 @@
     <%= f.input :price2, required: true, label: false, placeholder: "Price 2", input_html: {class: "form-control"} %>
     <%= f.input :size3, required: true, label: false, placeholder: "Size 3", input_html: {class: "form-control"} %>
     <%= f.input :price3, required: true, label: false, placeholder: "Price 3", input_html: {class: "form-control"} %>
+
+    <%= f.input :image %>
+
     <%= f.input :availability, required: false, label: "Available?" %>
 
     <% if current_user.try(:admin?) %>
