@@ -16,6 +16,9 @@
       
       
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user.try(:admin?) %>
+          <li><%= link_to '+', new_picture_path %></li>
+        <% end %>
         <li><%= link_to "Pictures", pictures_path %></li>
 
         <% if current_user %>
