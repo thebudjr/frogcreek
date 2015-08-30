@@ -12,8 +12,10 @@
     <%= f.input :price2, required: true, label: false, placeholder: "Price 2", input_html: {class: "form-control"} %>
     <%= f.input :size3, required: true, label: false, placeholder: "Size 3", input_html: {class: "form-control"} %>
     <%= f.input :price3, required: true, label: false, placeholder: "Price 3", input_html: {class: "form-control"} %>
-    <%= f.input :availability, label: "Available?" %>
+    <%= f.input :availability, required: false, label: "Available?" %>
 
-    <%= f.button :submit, class: "btn btn-primary btn-block" %>
+    <% if current_user.try(:admin?) %>
+      <%= f.button :submit, class: "btn btn-primary btn-block" %>
+    <% end %>
   <% end %>
 </div>
