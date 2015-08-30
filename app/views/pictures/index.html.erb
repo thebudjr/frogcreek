@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+<%= render @pictures %>
+</div>
+
+<!--
 <h1>Listing Pictures</h1>
 
 <table>
@@ -40,6 +45,9 @@
   </tbody>
 </table>
 
-<br>
+-->
 
-<%= link_to 'New Picture', new_picture_path %>
+<br>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Picture', new_picture_path %>
+<% end %>

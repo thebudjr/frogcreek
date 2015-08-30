@@ -1,20 +1,23 @@
-<%= simple_form_for(@picture) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <%= simple_form_for(@picture) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :photographer %>
-    <%= f.input :description %>
-    <%= f.input :price1 %>
-    <%= f.input :price2 %>
-    <%= f.input :price3 %>
-    <%= f.input :size1 %>
-    <%= f.input :size2 %>
-    <%= f.input :size3 %>
-    <%= f.input :availability %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :photographer %>
+      <%= f.input :category, :collection => [["Birds","Birds"],["Landscapes","Landscapes"],["Animals","Animals"],["Miscellaneous","Miscellaneous"]] %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :price1 %>
+      <%= f.input :price2 %>
+      <%= f.input :price3 %>
+      <%= f.input :size1 %>
+      <%= f.input :size2 %>
+      <%= f.input :size3 %>
+      <%= f.input :availability %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

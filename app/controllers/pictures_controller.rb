@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    @pictures = Picture.all
+    @pictures = Picture.where(availability: true)
   end
 
   # GET /pictures/1
@@ -69,6 +69,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:name, :photographer, :description, :price1, :price2, :price3, :size1, :size2, :size3, :availability)
+      params.require(:picture).permit(:name, :photographer, :category, :description, :price1, :price2, :price3, :size1, :size2, :size3, :availability)
     end
 end
