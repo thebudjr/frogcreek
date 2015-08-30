@@ -1,23 +1,19 @@
 <div class="container">
-  <%= simple_form_for(@picture) do |f| %>
+  <%= simple_form_for(@picture, html: {class: "form-signin"}) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :photographer %>
-      <%= f.input :category, :collection => [["Birds","Birds"],["Landscapes","Landscapes"],["Animals","Animals"],["Miscellaneous","Miscellaneous"]] %>
-      <%= f.input :description, as: :text %>
-      <%= f.input :price1 %>
-      <%= f.input :price2 %>
-      <%= f.input :price3 %>
-      <%= f.input :size1 %>
-      <%= f.input :size2 %>
-      <%= f.input :size3 %>
-      <%= f.input :availability %>
-    </div>
+    <%= f.input :name, required: true, label: false, placeholder: "Name", input_html: {class: "form-control"} %>
+    <%= f.input :photographer, required: true, label: false, placeholder: "Photographer", input_html: {class: "form-control"} %>
+    <%= f.input :category, :collection => [["Birds","Birds"],["Landscapes","Landscapes"],["Animals","Animals"],["Miscellaneous","Miscellaneous"]] %>
+    <%= f.input :description, required: true, label: false, placeholder: "Description", input_html: {class: "form-control", rows: 5} %>
+    <%= f.input :size1, required: true, label: false, placeholder: "Size 1", input_html: {class: "form-control"} %>
+    <%= f.input :price1, required: true, label: false, placeholder: "Price 1", input_html: {class: "form-control"} %>
+    <%= f.input :size2, required: true, label: false, placeholder: "Size 2", input_html: {class: "form-control"} %>
+    <%= f.input :price2, required: true, label: false, placeholder: "Price 2", input_html: {class: "form-control"} %>
+    <%= f.input :size3, required: true, label: false, placeholder: "Size 3", input_html: {class: "form-control"} %>
+    <%= f.input :price3, required: true, label: false, placeholder: "Price 3", input_html: {class: "form-control"} %>
+    <%= f.input :availability, label: "Available?" %>
 
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
+    <%= f.button :submit, class: "btn btn-primary btn-block" %>
   <% end %>
 </div>
