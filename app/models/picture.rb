@@ -1,7 +1,9 @@
 class Picture < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :name, use: :slugged
-	
+
+	has_many :sales
+
 	has_attached_file :image
 
 	validates_attachment_content_type :image,
@@ -9,4 +11,6 @@ class Picture < ActiveRecord::Base
 	message: "Only png, gif, and jpeg allowed"
 
 	validates :image, attachment_presence: true
+	validates_numericality_of :price,
+	greater_than: 49, message: "Must be at least 50 cents"
 end
